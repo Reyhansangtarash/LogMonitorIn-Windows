@@ -69,10 +69,11 @@ static int smtpPort = 587;
    2. ایمیل هشدار ارسال شده
   <img width="2480" height="1290" alt="image" src="https://github.com/user-attachments/assets/035835a8-1ece-40ef-9959-6d4d7fc04c16" />
 ساختار پروژه
+
 LogMonitor/
 │
 ├── Program.cs               # کد اصلی برنامه
 ├── LogViewerForm.cs         # فرم نمایش و هایلایت لاگ‌ها
 ├── LogViewerForm.Designer.cs
 ├── README.md                # این فایل
-تصاویر برای مستندات
+
