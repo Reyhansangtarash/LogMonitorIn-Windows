@@ -15,7 +15,7 @@ reading logs in logview and save it in database .while reading if there was a se
 - 🎨 **نمایش گرافیکی** با هایلایت (ردیف‌های حساس با رنگ قرمز و پس‌زمینه صورتی)
 - 📧 **ارسال ایمیل هشدار** به ادمین (با جزئیات کامل رویداد)
 - ⚠️ **هشدار تکرار رویداد** (اخطار در صورت تکرار بیش از ۱۰ بار در ۵ دقیقه)
-- 📁 **ذخیره خطاهای ایمیل** در فایل لاگ (`C:\LogMonitor\EmailErrors.log`)
+
 
 ## 🛠️ پیش‌نیازها
 
@@ -23,8 +23,15 @@ reading logs in logview and save it in database .while reading if there was a se
 - [SQL Server Express](https://www.microsoft.com/en-us/sql-server/sql-server-downloads) (یا هر نسخه دیگر)
 - [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms) (برای مدیریت دیتابیس)
 - یک حساب ایمیل معتبر (مثلاً Gmail) برای ارسال هشدارها
-2-تنظیم دیتابیس
-  CREATE DATABASE logmonitordb;
+-
+-
+
+2. تنظیم دیتابیس
+
+در SQL Server Management Studio (SSMS)، اسکریپت زیر را اجرا کنید:
+sql
+
+CREATE DATABASE logmonitordb;
 GO
 
 USE logmonitordb;
@@ -42,24 +49,36 @@ CREATE TABLE WindowsLogs (
     InsertedAt DATETIME DEFAULT GETDATE()
 );
 GO
-3. تنظیمات رشته اتصال به دیتابیس 
+
+
+
+3.  تنظیم رشته اتصال به دیتابیس
+
+در فایل Program.cs، متغیر connectionString را مطابق با سیستم خود ویرایش کنید:
+
+
 static string connectionString = "Server=localhost;Database=logmonitordb;Integrated Security=True;";
 
-4. تنظیمات ایمیل برای ارسال هشدار
+4.تنظیم ایمیل (برای ارسال هشدار)
+
+در فایل Program.cs، متغیرهای مربوط به ایمیل را مقداردهی کنید:
+
+
 static string emailFrom = "your-email@gmail.com";
 static string emailPassword = "your-app-password";  // رمز برنامه (App Password)
 static string emailTo = "admin@yourcompany.com";
 static string smtpServer = "smtp.gmail.com";
 static int smtpPort = 587;
 
-5. اجرای برنامه 
-پروژه را در Visual Studio باز کنید.
+5. اجرای برنامه
 
-با کلید F5 یا دکمه Start اجرا کنید.
+    پروژه را در Visual Studio باز کنید.
 
-در کنسول، شماره لاگ مورد نظر را وارد کنید (۱: Application، ۲: System، ۳: Security).
+    با کلید F5 یا دکمه Start اجرا کنید.
 
-نتیجه ذخیره‌سازی و هشدارها را مشاهده کنید.
+    در کنسول، شماره لاگ مورد نظر را وارد کنید (۱: Application، ۲: System، ۳: Security).
+
+    نتیجه ذخیره‌سازی و هشدارها را مشاهده کنید.
 
 📸 پیش‌نمایش
 
@@ -75,5 +94,4 @@ LogMonitor/
 ├── Program.cs               # کد اصلی برنامه
 ├── LogViewerForm.cs         # فرم نمایش و هایلایت لاگ‌ها
 ├── LogViewerForm.Designer.cs
-├── README.md                # این فایل
-
+├── README.md             
