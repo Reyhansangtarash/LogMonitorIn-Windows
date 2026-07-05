@@ -1,0 +1,7 @@
+D:\reyhan\logmonitor\logmonitor\bin\Debug\logmonitor.exe.config
+D:\reyhan\logmonitor\logmonitor\bin\Debug\logmonitor.exe
+D:\reyhan\logmonitor\logmonitor\bin\Debug\logmonitor.pdb
+D:\reyhan\logmonitor\logmonitor\obj\Debug\logmonitor.csproj.CoreCompileInputs.cache
+D:\reyhan\logmonitor\logmonitor\obj\Debug\logmonitor.exe
+D:\reyhan\logmonitor\logmonitor\obj\Debug\logmonitor.pdb
+D:\reyhan\logmonitor\logmonitor\obj\Debug\logmonitor.csproj.AssemblyReference.cache
